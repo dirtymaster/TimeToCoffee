@@ -1,0 +1,725 @@
+@import "nullstyle.scss";
+$maincolor: #f5f5dc;
+$secondcolor: #6D4C36;
+$thirdcolor: #221811;
+$topbottom: 2vh;
+$leftright: 2vw;
+
+@media screen and (max-width: 100000px) {
+	.donation {
+		bottom: 1vh;
+		left: -15px;
+		transform: scale(0.65);
+
+		&:hover {
+			transform: scale(0.67);
+		}
+	}
+	.popup__donation {
+		transform: scale(1);
+
+		&:hover {
+			transform: scale(1);
+		}
+	}
+}
+@media screen and (max-width: 1920px) {
+	.donation {
+		bottom: 1vh;
+		left: -15px;
+		transform: scale(0.65);
+
+		&:hover {
+			transform: scale(0.67);
+		}
+	}
+	.popup__donation {
+		transform: scale(0.8);
+
+		&:hover {
+			transform: scale(0.82);
+		}
+	}
+}
+@media screen and (max-width: 960px) {
+	.donation {
+		bottom: 0vh;
+		left: -45px;
+		transform: scale(0.5);
+
+		&:hover {
+			transform: scale(0.52);
+		}
+	}
+	.popup__donation {
+		transform: scale(0.6);
+
+		&:hover {
+			transform: scale(0.62);
+		}
+	}
+}
+
+@media screen and (max-width: 580px) {
+	.donation {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+
+
+/*--------------------*/
+
+html{
+	overflow: hidden;
+	height: 100%;
+}
+body {
+	height:100%;
+    position:fixed;
+    overflow:  hidden;
+    z-index: -100;
+    position: fixed;
+}
+
+main {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+	.random-video {
+		display: block;
+  		background: $maincolor;
+  		position: relative;
+  		--opacity-time: 1;
+  		width: 100%;
+  		height: 100vh;
+  		position: absolute;
+  		z-index: -100;
+	}
+
+		.random-video > video {
+  			display: block;
+  			width: 100%;
+  			height: 100%;
+  			position: absolute;
+  			opacity: 0;
+  			transition: all calc(var(--opacity-time) * 1ms) linear;
+  			object-fit: cover;
+		}
+
+	.ui {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		left: 50%;
+		top: 0;
+		transform: translate(-50%, -50%);
+	}
+        
+		
+
+			.logo-container {
+				position: absolute;
+				top: $topbottom;
+				left: $leftright;
+			}
+
+			.logo {
+				padding: calc(4px + 4*2 * ((100vw - 320px) / (1920 - 320)));
+				border-radius: 50%;
+				overflow: hidden;
+				background-color: rgba(255, 255, 255, 0.05);
+				-webkit-backdrop-filter: blur(20px);
+  					backdrop-filter: blur(20px);
+
+				img {
+					width: calc(35px + 35*2 * ((100vw - 320px) / (1920 - 320)));
+				}
+			}
+
+			.current-project {
+				text-align: center;
+				width: 35%;
+				position: absolute;
+				left: 50%;
+				transform: translate(-50%, 0%);
+				padding: 2.55vh
+						 calc(8px + 8*2 * ((100vw - 320px) / (1920 - 320)))
+						 calc(8px + 8*2 * ((100vw - 320px) / (1920 - 320)))
+						 calc(8px + 8*2 * ((100vw - 320px) / (1920 - 320)));
+  				border-radius: 0px
+  							   0px
+  							   calc(15px + 15*2 * ((100vw - 320px) / (1920 - 320)))
+  							   calc(15px + 15*2 * ((100vw - 320px) / (1920 - 320)));
+  				border-top: none;
+  				border-bottom: 1px solid $secondcolor;
+  				border-left: 1px solid $secondcolor;
+  				border-right: 1px solid $secondcolor;
+  				background-color: rgba(255, 255, 255, 0.05);
+  				-webkit-backdrop-filter: blur(20px);
+  				backdrop-filter: blur(20px);
+			}
+
+				.current-project__text {
+					margin-bottom: calc(2px + 2*2 * ((100vw - 320px) / (1920 - 320)));
+					font-family: B612;
+					font-size: calc(6pt + 6*2 * ((100vw - 320px) / (1920 - 320)));
+					color: $maincolor;
+					text-shadow: 
+						-0   -1px 2px $secondcolor,
+						 0   -1px 2px $secondcolor,
+						-0    1px 2px $secondcolor,
+						 0    1px 2px $secondcolor,
+						-1px -0   2px $secondcolor,
+						 1px -0   2px $secondcolor,
+						-1px  0   2px $secondcolor,
+						 1px  0   2px $secondcolor,
+						-1px -1px 2px $secondcolor,
+						 1px -1px 2px $secondcolor,
+						-1px  1px 2px $secondcolor,
+						 1px  1px 2px $secondcolor,
+						-1px -1px 2px $secondcolor,
+						 1px -1px 2px $secondcolor,
+						-1px  1px 2px $secondcolor,
+						 1px  1px 2px $secondcolor;
+				}
+
+				.current-project__textarea {
+					width: 100%;
+					font-size: calc(17pt + 17*2 * ((100vw - 320px) / (1920 - 320)));
+					font-family: Comfortaa;
+					color: $maincolor;
+					text-align: center;
+					background: transparent;
+					resize: none;
+					text-shadow: 
+						-0   -1px 2px $secondcolor,
+						 0   -1px 2px $secondcolor,
+						-0    1px 2px $secondcolor,
+						 0    1px 2px $secondcolor,
+						-1px -0   2px $secondcolor,
+						 1px -0   2px $secondcolor,
+						-1px  0   2px $secondcolor,
+						 1px  0   2px $secondcolor,
+						-1px -1px 2px $secondcolor,
+						 1px -1px 2px $secondcolor,
+						-1px  1px 2px $secondcolor,
+						 1px  1px 2px $secondcolor,
+						-1px -1px 2px $secondcolor,
+						 1px -1px 2px $secondcolor,
+						-1px  1px 2px $secondcolor,
+						 1px  1px 2px $secondcolor;
+
+						&::-webkit-scrollbar {
+							width: 0;
+						}
+
+						&::-webkit-input-placeholder {
+							color:#99998a;
+							opacity: 0.5;
+							text-shadow: #1a1a17;
+						}
+						&::-moz-placeholder {
+							color:#99998a;
+							opacity: 0.5;
+							text-shadow: #1a1a17;
+						}
+						&:-moz-placeholder {
+							color:#99998a;
+							opacity: 0.5;
+							text-shadow: #1a1a17;
+						}
+						&:-ms-input-placeholder {
+							color:#99998a;
+							opacity: 0.5;
+                        	text-shadow: #1a1a17;
+						}
+
+					transition-duration: 0.4s;
+
+					&:hover {
+						transform: scale(1.03);
+						transition-duration: 0.5s;
+					}
+				}
+
+			.timer {
+				position: absolute;
+				// display: inline-block;
+				top: $topbottom;
+				right: $leftright;
+
+				
+				transition: all 0.5s ease 0s;
+
+				& p {
+					font-family: B612;
+					color: $maincolor;
+					display: flex;
+					justify-content: space-between;
+					align-self: baseline;
+				}
+			}
+
+				.hide {
+					opacity: 0;
+					visibility: hidden;
+				}					
+			
+			        
+
+	.spotify {
+		position: absolute;
+		bottom: -190px;
+		left: calc(50% - 130px);
+	}
+
+		.spotify-player {
+			width: 260px;
+			opacity: 0.5;
+			transform: scale(0.8);
+			border-radius: 15px 15px 0px 0px;
+			overflow: hidden;
+			z-index: -100;
+			transition-duration: 0.4s;
+
+			&:hover {
+				opacity: 1;
+				transition-duration: 0.3s;
+			}
+		}
+
+		.spotify-player-hover {
+			opacity: 1;
+			transition-duration: 0.5s;
+			transform: translateY(-173px) scale(0.9);
+		}
+
+		.arrow {
+			width: calc(20pt + 20*2 * ((100vw - 320px) / (1920 - 320)));
+			max-width: 42px;
+			opacity: 0.5;
+			position: absolute;
+			top: 42px;
+			left: calc(-8px + -8*2 * ((100vw - 320px) / (1920 - 320)));
+
+			transition-duration: 0.3s;
+		}
+
+			.rotated {
+				opacity: 1;
+				transform: rotate(180deg);
+				left: calc(-18px + -18*1.5 * ((100vw - 320px) / (1920 - 320)));
+				transition-duration: 0.3s;
+			}
+		
+
+
+		.change-playlist {
+			display: block;
+			font-family: B612;
+			font-size: calc(6pt + 6*2 * ((100vw - 320px) / (1920 - 320)));
+			color: $maincolor;
+			text-shadow: 
+				-0   -1px 2px $secondcolor,
+				 0   -1px 2px $secondcolor,
+				-0    1px 2px $secondcolor,
+				 0    1px 2px $secondcolor,
+				-1px -0   2px $secondcolor,
+				 1px -0   2px $secondcolor,
+				-1px  0   2px $secondcolor,
+				 1px  0   2px $secondcolor,
+				-1px -1px 2px $secondcolor,
+				 1px -1px 2px $secondcolor,
+				-1px  1px 2px $secondcolor,
+				 1px  1px 2px $secondcolor,
+				-1px -1px 2px $secondcolor,
+				 1px -1px 2px $secondcolor,
+				-1px  1px 2px $secondcolor,
+				 1px  1px 2px $secondcolor;
+				 z-index: 0;
+			position: absolute;
+			top: calc(10px + -10*2 * ((100vw - 320px) / (1920 - 320)));
+			left: 0;
+			width: 100%;
+			text-align: center;
+
+			transition-duration: 0.2s;
+
+			&:hover {
+				transform: scale(1.03);
+				transition-duration: 0.3s;
+			}
+		}
+
+	.settings {
+		position: absolute;
+		bottom: $topbottom;
+		right: $leftright;
+		text-align: right;
+		transition-duration: 0.3s;
+	}
+
+		
+
+		.pointer {
+			cursor: pointer;
+		}
+
+		.list-head-container {
+			transition-duration: 0.2s;
+
+			&:hover {
+				transform: scale(1.03);
+				transition-duration: 0.3s;
+			}
+		}
+
+		.list-head {
+			width: calc(35px + 35*2 * ((100vw - 320px) / (1920 - 320)));
+
+			transition-duration: 0.2s;
+		}
+
+			.rotated-settings {
+				opacity: 1;
+				transform: rotate(180deg);
+				transition-duration: 0.3s;
+			}
+
+		.list {
+			display: none;
+			margin-bottom: calc(5px + 5*2 * ((100vw - 320px) / (1920 - 320)));
+			background-color: rgba(109, 76, 54, 0.75);
+			padding: calc(4px + 4*2 * ((100vw - 320px) / (1920 - 320))) calc(10.1px + 10.1*2 * ((100vw - 320px) / (1920 - 320)));
+			border-radius: calc(7px + 7*2 * ((100vw - 320px) / (1920 - 320)));
+			z-index: 100;
+			-webkit-backdrop-filter: blur(20px);
+				backdrop-filter: blur(20px);
+		}
+
+			.list-element {
+				color: $maincolor;
+				font-family: B612;
+				font-size: calc(6pt + 6*2 * ((100vw - 320px) / (1920 - 320)));
+				padding: calc(5px + 5*2 * ((100vw - 320px) / (1920 - 320))) 0px;
+				border-bottom: 1px solid $maincolor;
+
+				& a {
+					color: $maincolor;
+				}
+
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+
+		.show {
+			display: block;
+		}
+
+	.popup {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.35);
+		overflow: auto;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		visibility: hidden;
+		z-index: 100;
+		transition: all 0.5s ease 0s;
+
+		&:target {
+		opacity: 1;
+		visibility: visible;
+		}
+	}
+
+
+	.video-load {
+		background-color: $maincolor;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+		z-index: 0;
+		transition: all 0.5s ease 0s;
+	}
+
+	.popup-load {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		background-color: $secondcolor;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+		transition: all 0.5s ease 0s;
+		z-index: 200;	
+	}
+
+		.loader {
+			 margin: auto;
+			 width: 75px;
+			 height: 75px;
+			 border:10px solid rgba(245, 245, 220, 0.6);
+			 border-radius: 50%;
+			 border-left-color: $maincolor;
+			 animation: loader 1s linear infinite;
+			}
+			@keyframes loader {
+			 100% {
+			  transform: rotate(360deg);
+			 }
+			}	
+
+		.popup__area {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+		}
+
+		.popup__body {
+			min-height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: calc(10px + 10*2 * ((100vw - 320px) / (1920 - 320)));
+		}
+
+		
+
+			.popup__content {
+				background-color: $maincolor;
+				border-radius: calc(8px + 8*2 * ((100vw - 320px) / (1920 - 320)));
+				color: black;
+				width: 50%;
+				padding: calc(8pt + 8*2 * ((100vw - 320px) / (1920 - 320))) 
+						 calc(15px + 15*2 * ((100vw - 320px) / (1920 - 320)));
+				position: relative;
+			}
+			.popup__close {
+				position: absolute;
+				right: calc(7.5px + 7.5*2 * ((100vw - 320px) / (1920 - 320)));
+				top: calc(7.5px + 7.5*2 * ((100vw - 320px) / (1920 - 320)));
+				
+				img {
+					width: calc(5px + 5*2 * ((100vw - 320px) / (1920 - 320)));
+				}
+			}
+			.popup__title {
+				font-size: calc(12pt + 12*2 * ((100vw - 320px) / (1920 - 320)));
+				color: $thirdcolor;
+				font-family: B612;
+				text-align: center;
+				margin-bottom: calc(8pt + 8*2 * ((100vw - 320px) / (1920 - 320)));
+
+				& a {
+					color: $thirdcolor;
+					text-decoration: none;
+				}
+			}
+
+			.p360 {
+				margin-bottom: 0px;
+			}
+
+			.popup__text {
+				line-height: 1.5;
+				font-size: calc(6pt + 6*2 * ((100vw - 320px) / (1920 - 320)));
+				color: $thirdcolor;
+				font-family: B612;
+				margin-bottom: calc(8pt + 8*2 * ((100vw - 320px) / (1920 - 320)));
+
+				& a {
+					color: $thirdcolor;
+					text-decoration: underline;
+				}
+			}
+
+			.popup__donation {
+				margin: -15px;
+				text-align: center;
+				transition-duration: 0.2s;
+
+				&:hover {
+					transition-duration: 0.3s;
+				}
+			}
+
+			.popup__text-onboarding {
+				line-height: 1.5;
+				font-size: calc(9pt + 9*2 * ((100vw - 320px) / (1920 - 320)));
+				color: $thirdcolor;
+				font-family: B612;
+				margin-bottom: calc(8pt + 8*2 * ((100vw - 320px) / (1920 - 320)));
+			}
+
+//Таймер
+.content {
+	text-align: right
+
+}
+#timer {
+
+    font-size: calc(17pt + 17*2 * ((100vw - 320px) / (1920 - 320)));
+    letter-spacing: 2px;
+	color: $maincolor;
+	font-family: Comfortaa;
+	text-shadow: 
+		-0   -1px 2px $secondcolor,
+		 0   -1px 2px $secondcolor,
+		-0    1px 2px $secondcolor,
+		 0    1px 2px $secondcolor,
+		-1px -0   2px $secondcolor,
+		 1px -0   2px $secondcolor,
+		-1px  0   2px $secondcolor,
+		 1px  0   2px $secondcolor,
+		-1px -1px 2px $secondcolor,
+		 1px -1px 2px $secondcolor,
+		-1px  1px 2px $secondcolor,
+		 1px  1px 2px $secondcolor,
+		-1px -1px 2px $secondcolor,
+		 1px -1px 2px $secondcolor,
+		-1px  1px 2px $secondcolor,
+		 1px  1px 2px $secondcolor;
+}
+
+	.timer__text {
+		display: flex;
+		justify-content: center;
+		margin-bottom: calc(2px + 2*2 * ((100vw - 320px) / (1920 - 320)));
+		font-family: B612;
+		font-size: calc(6pt + 6*2 * ((100vw - 320px) / (1920 - 320)));
+		color: $maincolor;
+		text-shadow: 
+			-0   -1px 2px $secondcolor,
+			 0   -1px 2px $secondcolor,
+			-0    1px 2px $secondcolor,
+			 0    1px 2px $secondcolor,
+			-1px -0   2px $secondcolor,
+			 1px -0   2px $secondcolor,
+			-1px  0   2px $secondcolor,
+			 1px  0   2px $secondcolor,
+			-1px -1px 2px $secondcolor,
+			 1px -1px 2px $secondcolor,
+			-1px  1px 2px $secondcolor,
+			 1px  1px 2px $secondcolor,
+			-1px -1px 2px $secondcolor,
+			 1px -1px 2px $secondcolor,
+			-1px  1px 2px $secondcolor,
+			 1px  1px 2px $secondcolor;
+	}
+
+button.btn_default {
+	font-size: calc(4pt + 4*2 * ((100vw - 320px) / (1920 - 320)));
+	font-family: B612;
+	padding: calc(3px + 3*2 * ((100vw - 320px) / (1920 - 320)))
+			 calc(4px + 4*2 * ((100vw - 320px) / (1920 - 320)));
+    margin: 2px
+    		0px;
+    font-weight: bold;
+	border-radius: calc(3px + 3*2 * ((100vw - 320px) / (1920 - 320)));
+	-webkit-border-radius: calc(4px + 4*2 * ((100vw - 320px) / (1920 - 320)));
+	border: 1px solid;
+}
+#btn_start {
+	font-size: calc(4pt + 4*2 * ((100vw - 320px) / (1920 - 320)));
+	font-family: B612;
+    background-color: #9F9;
+	border: 1px solid #171;
+}
+#btn_pause {
+	font-size: calc(4pt + 4*2 * ((100vw - 320px) / (1920 - 320)));
+	font-family: B612;
+    background-color: #FF9;
+	border: 1px solid #771;
+}
+#btn_reset {
+	font-size: calc(4pt + 4*2 * ((100vw - 320px) / (1920 - 320)));
+	font-family: B612;
+    background-color: #F99;
+	border: 1px solid #711;
+}
+.ipt_custom {
+	height: 1em;
+	font-size: calc(4pt + 4*2 * ((100vw - 320px) / (1920 - 320)));
+	margin-top: 2px;
+	padding: calc(6px + 6*2 * ((100vw - 320px) / (1920 - 320)))
+			 calc(4px + 4*2 * ((100vw - 320px) / (1920 - 320)));
+    width: calc(30px + 30*2 * ((100vw - 320px) / (1920 - 320)));
+	border-radius: calc(4px + 4*2 * ((100vw - 320px) / (1920 - 320)));
+	-webkit-border-radius: calc(4px + 4*2 * ((100vw - 320px) / (1920 - 320)));
+	border: 1px solid;
+    text-align: center;
+}
+.custom-playlist-input {
+	width: calc(50px + 50*2 * ((100vw - 320px) / (1920 - 320)));
+}
+#embed {
+	margin-left: calc(3px + 3*2 * ((100vw - 320px) / (1920 - 320)));
+}
+
+#custom_units {
+	display: none;
+	/* font-size: calc(4pt + 4*2 * ((100vw - 320px) / (1920 - 320)));
+	padding: calc(3px + 3*2 * ((100vw - 320px) / (1920 - 320)))
+			 calc(4px + 4*2 * ((100vw - 320px) / (1920 - 320)));
+    width: calc(37px + 37*2 * ((100vw - 320px) / (1920 - 320)));
+	border-radius: calc(5px + 5*2 * ((100vw - 320px) / (1920 - 320)));
+	-webkit-border-radius: calc(5px + 5*2 * ((100vw - 320px) / (1920 - 320)));
+	border: 1px solid;
+    text-align: center; */
+}
+
+.congrats {
+	position: fixed;
+	margin-top: calc(5px + 5*2 * ((100vw - 320px) / (1920 - 320)));
+	right: $leftright;
+	font-family: B612;
+	font-size: calc(6pt + 6*2 * ((100vw - 320px) / (1920 - 320)));
+	line-height: 1.5;
+	color: $maincolor;
+	text-shadow: 
+		-0   -1px 2px $secondcolor,
+		 0   -1px 2px $secondcolor,
+		-0    1px 2px $secondcolor,
+		 0    1px 2px $secondcolor,
+		-1px -0   2px $secondcolor,
+		 1px -0   2px $secondcolor,
+		-1px  0   2px $secondcolor,
+		 1px  0   2px $secondcolor,
+		-1px -1px 2px $secondcolor,
+		 1px -1px 2px $secondcolor,
+		-1px  1px 2px $secondcolor,
+		 1px  1px 2px $secondcolor,
+		-1px -1px 2px $secondcolor,
+		 1px -1px 2px $secondcolor,
+		-1px  1px 2px $secondcolor,
+		 1px  1px 2px $secondcolor;
+	transition-duration: 0.5s;
+
+	.congrats-show {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.donation {
+	position: absolute;
+	transition-duration: 0.2s;
+
+	&:hover {
+		transition-duration: 0.3s;
+	}
+}
+
